@@ -1,0 +1,85 @@
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.war
+*.ear
+*.jar
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+.idea_modules/
+out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+.history/
+
+### Operating System ###
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+### Mac OS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### Logs and databases ###
+*.log
+*.sqlite
+*.db
+
+### Environment files ###
+.env
+.env.local
+.env.*.local
+application-*.properties
+application-*.yml
+!application.yml
+!application.properties
+
+### Other ###
+HELP.md
+*.swp
+*.swo
+.factorypath
+dependency-reduced-pom.xml
+*.orig

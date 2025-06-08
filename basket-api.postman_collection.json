@@ -1,0 +1,194 @@
+{
+    "info": {
+        "name": "Basket API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Create Product",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Test Product\",\n    \"price\": 19.99\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/products",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "products"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Product",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/products/{{productId}}",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "products", "{{productId}}"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Baskets",
+            "item": [
+                {
+                    "name": "Create Basket",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets"]
+                        }
+                    }
+                },
+                {
+                    "name": "Add Item to Basket",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"productId\": \"{{productId}}\",\n    \"quantity\": 2\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets/{{basketId}}/items",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets", "{{basketId}}", "items"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Basket",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets/{{basketId}}",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets", "{{basketId}}"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Item Quantity",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"quantity\": 5\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets/{{basketId}}/items/{{productId}}",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets", "{{basketId}}", "items", "{{productId}}"]
+                        }
+                    }
+                },
+                {
+                    "name": "Remove Item from Basket",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets/{{basketId}}/items/{{productId}}",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets", "{{basketId}}", "items", "{{productId}}"]
+                        }
+                    }
+                },
+                {
+                    "name": "Confirm Basket",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-User-Id",
+                                "value": "user123"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/baskets/{{basketId}}/confirm",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "baskets", "{{basketId}}", "confirm"]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "basketId",
+            "value": ""
+        },
+        {
+            "key": "productId",
+            "value": ""
+        }
+    ]
+} 

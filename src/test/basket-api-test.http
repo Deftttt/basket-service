@@ -1,0 +1,18 @@
+### Create a new basket
+POST http://localhost:8080/api/baskets
+X-User-Id: user123
+Content-Type: application/json
+
+### Add item to basket (replace {basketId} with the ID received from create basket response)
+POST http://localhost:8080/api/baskets/{basketId}/items
+X-User-Id: user123
+Content-Type: application/json
+
+{
+  "productId": "product123",
+  "quantity": 2
+}
+
+### Get basket contents
+GET http://localhost:8080/api/baskets/{basketId}
+X-User-Id: user123 

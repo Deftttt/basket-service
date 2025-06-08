@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+basket:
+  expiration:
+    minutes: 2
+    check:
+      interval: 30000
+  price:
+    refresh:
+      interval: 300000
